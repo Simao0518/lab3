@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab3 - Grid Layout 2</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>Header</header>
+    <nav>
+        <a href="index.html">Flex</a>
+        <a href="grid1.html">Grid 1</a>
+        <a href="grid2.html">Grid 2</a>
+        <a href="grid3.html">Grid 3</a>
+        <a href="grid4.html">Grid 4</a>
+        <a href="grid5.html">Grid 5</a>
+        <a href="grid6.html">Grid 6</a>
+    </nav>
+    <div class="container">
+        <main>Main Content</main>
+        <aside>Aside</aside>
+        <article>Article</article>
+    </div>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Roboto', sans-serif;
+            background-color: #f1f1f1;
+        }
+        header, nav, main, article, aside, footer {
+            padding: 10px;
+            color: white;
+            text-align: center;
+        }
+        header { background-color: #264653; }
+        nav { background-color: #2a9d8f; }
+        main { background-color: #f4a261; }
+        article {
+            background-image: url('https://source.unsplash.com/random/800x600/?mountains');
+            background-size: cover;
+            background-position: center;
+        }
+        aside {
+            background-image: url('https://source.unsplash.com/random/800x600/?beach');
+            background-size: cover;
+            background-position: center;
+        }
+        footer { background-color: #e76f51; }
+        .container {
+            display: grid;
+            gap: 10px;
+            height: 100vh;
+            grid-template-areas:
+                "header header"
+                "nav nav"
+                "main main"
+                "aside article"
+                "footer footer";
+            grid-template-rows: 60px 50px 1fr 1fr 40px;
+            grid-template-columns: 1fr 1fr;
+        }
+        header { grid-area: header; }
+        nav { grid-area: nav; }
+        main { grid-area: main; }
+        aside { grid-area: aside; }
+        article { grid-area: article; }
+        footer { grid-area: footer; }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+    </style>
+    <footer>Footer</footer>
+</body>
+</html>
